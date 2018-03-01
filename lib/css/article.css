@@ -18,6 +18,11 @@
     color: #000;
     font-weight: 700;
 }
+.comment-body .e-mail {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700;
+}
 .comment-body .metadata {
     display: block;
     color: #000;

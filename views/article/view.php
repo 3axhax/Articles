@@ -18,7 +18,7 @@
     <div class="comment-body">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <div class="title"><h4>Автор</h4></div>
+                <div class="title"><h4>Автор <span class="e-mail">mail@mail.com</span></h4></div>
                 <div class="metadata">
                     <span class="date">2018-00-00 13:00:00</span>
                 </div>
