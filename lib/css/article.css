@@ -1,14 +1,25 @@
-.media-body .title {
+.article-body .title {
     display: block;
     font-size: 1rem;
     color: #fff;
     font-weight: 700;
 }
-.media-body .metadata {
+.article-body .metadata {
     display: block;
     color: #fff;
     font-size: .8125rem;
 }
-.media {
+.article {
     margin-top:0px;
+}
+.comment-body .author {
+    display: block;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700;
+}
+.comment-body .metadata {
+    display: block;
+    color: #000;
+    font-size: .75rem;
 }
