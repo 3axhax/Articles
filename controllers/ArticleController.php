@@ -1,19 +1,24 @@
 <?php
 
 use components\Report;
-use models\Book;
-use models\ReadXML;
+use models\Article;
 use controllers\SiteController;
 
-class BookController extends SiteController
+class ArticleController extends SiteController
 {
     public function actionList()
     {
-        $books = Book::getBookList();
-        $this->setTitle('Список книг');
-        return $this->render('books/list', ['books' => $books]);
+        $articles = Article::getArticleList();
+        $this->setTitle('Список Статей');
+        return $this->render('article/list', ['articles' => $articles]);
     }
-    public function actionAddFile()
+    public function actionView($id)
+    {
+        $article = Article::getArticleById($id);
+        $this->setTitle('Статья: '.$article['title']);
+        return $this->render('article/view', ['article' => $article]);
+    }
+    /*public function actionAddFile()
     {
         if ($_REQUEST)
         {
@@ -25,5 +30,5 @@ class BookController extends SiteController
         else {$ans = true; $xml_file = '';}
         $this->setTitle('Добавить файл данных');
         return $this->render('books/add_file', ['ans' => $ans]);
-    }
+    }*/
 }

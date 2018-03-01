@@ -1,0 +1,14 @@
+.media-body .title {
+    display: block;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+}
+.media-body .metadata {
+    display: block;
+    color: #fff;
+    font-size: .8125rem;
+}
+.media {
+    margin-top:0px;
+}

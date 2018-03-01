@@ -21,7 +21,7 @@ class Router
         $uri = $this->getURI();
         if ($uri == '')
         {
-            $controllerName = 'BookController';
+            $controllerName = 'ArticleController';
             include_once (ROOT . '/controllers/' .$controllerName. '.php');
             $controllerObject = new $controllerName;
             $result = $controllerObject->actionList();

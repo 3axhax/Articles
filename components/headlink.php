@@ -5,6 +5,7 @@
     <!-- Bootstrap -->
     <link href="/lib/css/bootstrap.min.css" rel="stylesheet">
     <link href="/lib/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/lib/css/article.css" rel="stylesheet">
 </head>
 <body>
 

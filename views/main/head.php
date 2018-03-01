@@ -10,10 +10,7 @@
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">Меню<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/list"><span class="glyphicon glyphicon-list"> Список книг</a>
-                        </li>
-                        <li>
-                            <a href="/add-file"><span class="glyphicon glyphicon-import"> Добавить файл</a>
+                            <a href="/list"><span class="glyphicon glyphicon-list"> Список статей</a>
                         </li>
                     </ul>
                 </li>

@@ -3,7 +3,7 @@
 return array(
     'type' => 'mysql',
     'host' => 'localhost',
-    'dbname' => 'dfaktor',
+    'dbname' => 'article_comments',
     'user' => 'root',
     'password' => '',
 );

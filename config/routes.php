@@ -1,7 +1,6 @@
 <?php
 return array(
-    'list' => 'book/list',
-    'add-file' => 'book/addFile',
-    'books/list' => 'book/list',
-    'books' => 'book/list',
+    'article/([0-9]+)' => 'article/view/$1',
+    'list' => 'article/list',
+    'article' => 'article/list',
 );
