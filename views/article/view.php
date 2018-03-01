@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="col-lg-offset-2">
-                    <button type="submit" class="btn btn-success">Отправить <span class="glyphicon glyphicon-pencil"></button>
+                    <button type="submit" class="btn btn-success">Отправить <span class="glyphicon glyphicon-comment"></button>
                 </div>
             </div>
         </div>
