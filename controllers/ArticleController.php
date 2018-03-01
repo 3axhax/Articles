@@ -1,6 +1,5 @@
 <?php
 
-use components\Report;
 use models\Article;
 use controllers\SiteController;
 

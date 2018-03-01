@@ -3,8 +3,6 @@
 namespace models;
 
 use components\Db;
-use PDO;
-use components\Report;
 
 class Article
 {

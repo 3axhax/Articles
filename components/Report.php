@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ТиМ
- * Date: 19.02.2018
- * Time: 22:44
- */
 
 namespace components;
 

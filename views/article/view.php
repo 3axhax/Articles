@@ -14,20 +14,9 @@
     </div>
 </div>
 <hr>
-<div class="comment">
-    <div class="comment-body">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <div class="title"><h4>Автор <span class="e-mail">mail@mail.com</span></h4></div>
-                <div class="metadata">
-                    <span class="date">2018-00-00 13:00:00</span>
-                </div>
-            </div>
-            <div class="panel-body">
-                <div class="media-text text-justify">Comment</div>
-            </div>
-        </div>
-    </div>
+<h3>Последние 5 комментариев:</h3>
+<hr>
+<div class="comment" id="comment-list">
 </div>
 <hr>
 <div class="comment">
@@ -39,32 +28,39 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="form-horizontal col-md-12">
-                        <div class="form-group has-feedback">
-                            <label class="col-md-2">Имя:</label>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Имя:</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control">
+                                <input type="text" id="name" class="form-control" placeholder="Ваше имя">
                             </div>
+                            <div class="help-block" id="name-error"></div>
                         </div>
-                        <div class="form-group has-feedback">
-                            <label class="col-md-2">E-mail:</label>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">E-mail:</label>
                             <div class="col-md-3">
-                                <input type="email" class="form-control">
+                                <input type="text" id="email" class="form-control" placeholder="Ваш E-mail">
                             </div>
+                            <div class="help-block" id="email-error"></div>
                         </div>
-                        <div class="form-group has-feedback">
-                            <label class="col-md-2">Комментарий:</label>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Комментарий:</label>
                             <div class="col-md-7">
-                                <textarea type="" class="form-control" rows="6"></textarea>
+                                <textarea id="comment" class="form-control" rows="6" placeholder="Комментарий"></textarea>
                             </div>
+                            <div class="help-block" id="comment-error"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-offset-2">
-                    <button type="submit" class="btn btn-success">Отправить <span class="glyphicon glyphicon-comment"></button>
+                    <button class="btn btn-success" onclick="sentComment(<?= $article['id']?>)">Отправить <span class="glyphicon glyphicon-comment"></button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    getComments(<?= $article['id']?>);
+    setInterval(function () {getComments(<?= $article['id']?>)}, 1000*30);
+</script>
 <!--<pre>
 --><?/*= print_r($article)*/?>
