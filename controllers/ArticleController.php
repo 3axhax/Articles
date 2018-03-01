@@ -17,17 +17,4 @@ class ArticleController extends SiteController
         $this->setTitle('Статья: '.$article['title']);
         return $this->render('article/view', ['article' => $article]);
     }
-    /*public function actionAddFile()
-    {
-        if ($_REQUEST)
-        {
-            $file = $_FILES['importfile']['tmp_name'];
-            $xml = new ReadXML($file);
-            $xml->getBooksFromFile();
-            $ans = Report::instance()->getReportMessage();
-        }
-        else {$ans = true; $xml_file = '';}
-        $this->setTitle('Добавить файл данных');
-        return $this->render('books/add_file', ['ans' => $ans]);
-    }*/
 }

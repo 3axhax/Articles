@@ -1,7 +1,6 @@
 <?php
 
 use models\Comment;
-use components\Report;
 use controllers\SiteController;
 
 
