@@ -62,5 +62,3 @@
     getComments(<?= $article['id']?>);
     setInterval(function () {getComments(<?= $article['id']?>)}, 1000*30);
 </script>
-<!--<pre>
---><?/*= print_r($article)*/?>
