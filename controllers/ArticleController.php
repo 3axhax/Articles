@@ -14,6 +14,7 @@ class ArticleController extends SiteController
     public function actionView($id)
     {
         $article = Article::getArticleById($id);
+        if(!$article) return $this->render('main/404');
         $this->setTitle('Статья: '.$article['title']);
         return $this->render('article/view', ['article' => $article]);
     }

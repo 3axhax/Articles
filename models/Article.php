@@ -20,11 +20,11 @@ class Article
     {
         $db = Db::getConnection();
         $articleList = array();
-        $sql = 'SELECT * FROM '. self::tableName();
-        $result = $db->query($sql);
-        
+        $sql = $db->prepare('SELECT * FROM  '.self::tableName());
+        $sql->execute();
+
         $i = 0;
-        while($row = $result->fetch()) {
+        while($row = $sql->fetch()) {
             $articleList[$i]['id'] = $row['id'];
             $articleList[$i]['title'] = $row['title'];
             $articleList[$i]['content'] = $row['content'];
@@ -38,8 +38,9 @@ class Article
     static public function getArticleById($id)
     {
         $db = Db::getConnection();
-        $sql = 'SELECT * FROM '. self::tableName().' WHERE id = '.$id;
-        $result = $db->query($sql);
-        return $result->fetch();
+        if (!is_numeric($id)) return false;
+        $sql = $db->prepare('SELECT * FROM ' . self::tableName() . ' WHERE id = ? ');
+        $sql->execute(array($id));
+        return $sql->fetch();
     }
 }

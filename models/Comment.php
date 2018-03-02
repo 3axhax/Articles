@@ -21,7 +21,7 @@ class Comment
 
     public function __construct($id_article, $name, $email, $comment)
     {
-        $this->id_article = $id_article;
+        $this->id_article = (int) $id_article;
         $this->name = $name;
         $this->email = $email;
         $this->comment = $comment;
@@ -70,20 +70,26 @@ class Comment
     public function save()
     {
         $db = Db::getConnection();
-        $sql = 'INSERT INTO `'. self::tableName().'` (`id`, `id_article`, `name`, `email`, `comment`, `date`) VALUES (NULL, \''.$this->id_article.'\', \''.$this->name.'\', \''.$this->email.'\', \''.$this->comment.'\', \''.$this->date.'\')';
-        $result = $db->query($sql);
-        return $result;
+        $sql = $db->prepare('INSERT INTO `'. self::tableName().'` (`id`, `id_article`, `name`, `email`, `comment`, `date`) VALUES (NULL, :id_article, :name, :email, :comment, :date)');
+        $sql->bindParam(':id_article', $this->id_article);
+        $sql->bindParam(':name', $this->name);
+        $sql->bindParam(':email', $this->email);
+        $sql->bindParam(':comment', $this->comment);
+        $sql->bindParam(':date', $this->date);
+        $sql->execute();
+        return $sql;
     }
 
     static public function getCommentList($id_article)
     {
+        if (!is_numeric($id_article)) return false;
         $db = Db::getConnection();
         $commentList = array();
-        $sql = 'SELECT * FROM '. self::tableName().' WHERE `id_article` = '.$id_article.' ORDER BY `comments`.`date` DESC LIMIT 5';
-        $result = $db->query($sql);
+        $sql = $db->prepare('SELECT * FROM '. self::tableName().' WHERE `id_article` = ? ORDER BY `'.self::tableName().'`.`date` DESC LIMIT 5');
+        $sql->execute(array($id_article));
 
         $i = 0;
-        while($row = $result->fetch()) {
+        while($row = $sql->fetch()) {
             $commentList[$i]['id'] = $row['id'];
             $commentList[$i]['id_article'] = $row['id_article'];
             $commentList[$i]['name'] = $row['name'];
