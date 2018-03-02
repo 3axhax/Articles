@@ -13,7 +13,7 @@ class ArticleController extends SiteController
     }
     public function actionView($id)
     {
-        $article = Article::getArticleById($id);
+        $article = Article::getArticleById((int)$id);
         $this->setTitle('Статья: '.$article['title']);
         return $this->render('article/view', ['article' => $article]);
     }
